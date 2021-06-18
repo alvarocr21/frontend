@@ -1,0 +1,156 @@
+@import "../../styles/colors";
+@import "../../styles/titles";
+@import "../../styles/buttons";
+@import "../../styles/inputs";
+@import "../../styles/breakpoints";
+
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+
+  .Card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    background-image: linear-gradient(
+      to bottom right,
+      $honey-yellow-100,
+      $honey-yellow-400
+    );
+
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+    min-width: 500px;
+
+    > .Title {
+      @include title1;
+      padding: 10px;
+      margin: 0;
+    }
+
+    > p {
+      @include title1;
+      padding: 5px;
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    > a {
+      color: $honey-yellow-500;
+      padding-top: 20px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: darken($honey-yellow-500, 10%);
+      }
+    }
+
+    > form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      > label {
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin: 5px 0;
+        color: $honey-yellow-500;
+
+        input {
+          @include input1;
+          margin: 5px 0;
+        }
+
+        span {
+          color: $red;
+          font-size: 1rem;
+        }
+      }
+
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        button {
+          @include button1;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    > .Card {
+      > form {
+        > label {
+          font-size: 1rem;
+
+          > span {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-xs) {
+    > .Card {
+      min-width: 380px;
+    }
+  }
+
+  @media (max-width: $breakpoint-xxs) {
+    > .Card {
+      min-width: 250px;
+
+      > p {
+        font-size: 0.8rem;
+        padding: 0;
+      }
+
+      > a {
+        font-size: 0.9rem;
+      }
+
+      > form {
+        > label {
+          font-size: 0.9rem;
+
+          span {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.ToastContainer {
+  @media (max-width: $breakpoint-xs) {
+    margin: 10px auto;
+    width: 300px;
+  }
+}
+
+.SnackbarContainer {
+  border-radius: 15px;
+  background-color: $honey-yellow-500;
+  font-size: 1.1rem;
+  color: $white;
+}
+
+.SnackbarProgress {
+  background-color: $honey-yellow-500;
+}
