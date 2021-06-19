@@ -52,7 +52,7 @@ const TodoList = () => {
   
   //console.log(respuesta);
   obtieneTarea();
-  alert('Se eliminaron los datos correctamente') 
+  alert('La tarea se cerró correctamente') 
 };
 
   return (
@@ -80,13 +80,10 @@ const TodoList = () => {
                   return (
                     <div key={index}>
                       <li>
-                        <button className="hecho">
-                          <FontAwesomeIcon icon={faCheck} />
-                        </button>
                         <input type="text" value={item.tarea} />
                         
                         <button className="eliminar" onClick={(e)=>eliminarTarea(e,item)}>
-                          <FontAwesomeIcon icon={faTrash} />
+                          <FontAwesomeIcon icon={faCheck} />
                         </button>
                       </li>
                     </div>
